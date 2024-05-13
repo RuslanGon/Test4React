@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 
 
 const RefExample = () => {
@@ -12,8 +12,14 @@ console.log(getComputedStyle(buttonRef.current).width)
 }
 
 const inputClick = () => {
-console.log(inpurRef.current);
+  // inpurRef.current.focus()
 }
+
+useEffect(() => {
+  if (inpurRef.current === null) return;
+  inpurRef.current.focus();
+}, []);
+
 
   return (
     <div>
