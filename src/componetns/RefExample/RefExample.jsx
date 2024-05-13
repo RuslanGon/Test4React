@@ -7,6 +7,7 @@ const buttonRef = useRef(null)
 
 const handleClick = () => {
 console.log(getComputedStyle(buttonRef.current).height);
+console.log(getComputedStyle(buttonRef.current).width)
 }
 
 
