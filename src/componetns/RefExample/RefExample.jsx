@@ -12,7 +12,7 @@ console.log(getComputedStyle(buttonRef.current).width)
 }
 
 const inputClick = () => {
-  // inpurRef.current.focus()
+  inpurRef.current.focus()
 }
 
 useEffect(() => {

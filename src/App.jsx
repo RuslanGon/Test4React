@@ -7,6 +7,7 @@ import MailBoxForm from "./componetns/MailBoxForm/MailBoxForm";
 
 function App() {
   const [filter, setFilter] = useState('')
+  const [counter, setCounter] =useState(0)
   const [users, setUsers] = useState(() => {
     const stringUser = localStorage.getItem('users')
     if(!stringUser) return MeetExspressUser
@@ -44,6 +45,10 @@ const filteredUsers = users.filter((user) =>
   return (
     <div>
       <MailBoxForm onAddUser={onAddUser} />
+      <section>
+        <h3>counter:{counter}</h3>
+        <button onClick={() => {setCounter(counter + 1)}}>Click to increment</button>
+      </section>
       <div>
         <h3>Search by name or email</h3>
         <input type="text" value={filter} placeholder="Search" onChange={onChangeUser}/>
