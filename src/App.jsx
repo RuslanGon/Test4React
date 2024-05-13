@@ -15,6 +15,7 @@ function App() {
     return parseUser
   });
 
+  
   useEffect(() => {
     localStorage.setItem('users', JSON.stringify(users))
   }, [users])
