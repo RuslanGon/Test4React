@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import MailBoxUser from "./componetns/MailBox/MailBoxUser";
 import MeetExspressUser from "./componetns/MailBox/meestExpress.json";
@@ -37,10 +37,10 @@ const onChangeUser = (event) => {
   setFilter(event.target.value)
 }
 
-const filteredUsers = users.filter((user) =>
-  user.userName.toLowerCase().includes(filter.toLowerCase())|| 
-  user.userEmail.toLowerCase().includes(filter.toLowerCase())
-);
+const filteredUsers = useMemo(() => users.filter((user) =>
+user.userName.toLowerCase().includes(filter.toLowerCase())|| 
+user.userEmail.toLowerCase().includes(filter.toLowerCase())
+), [filter, users])
 
   return (
     <div>
